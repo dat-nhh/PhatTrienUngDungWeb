@@ -1,0 +1,48 @@
+﻿@{
+    try
+    {
+        string hoTen = Session["HoTen"].ToString();
+        if (hoTen != null)
+        {
+            ViewBag.NguoiDung = "Thông tin người dùng: " + hoTen;
+        }
+        else
+        {
+            ViewBag.NguoiDung = "Thông tin người dùng: Chưa đăng nhập ";
+        }
+    }
+    catch
+    {
+
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @RenderSection("scripts", required: false)
+    <link href="~/Content/styleAdmin.css" rel="stylesheet" />
+</head>
+<body style="margin-top:0px;">
+    <div id="banner" style="top:0px;position:absolute;">HỆ THỐNG QUẢN LÝ KHO CÀ PHÊ
+        <p align="right" style="color:#FFC52D; font-size:10px;">  @ViewBag.NguoiDung</p>
+    </div>
+    </div>
+        <ul>
+            <li>@Html.ActionLink("GIỚI THIỆU", "../GioiThieu_63133655/Index", new { @class = "a" })</li>
+            <li>@Html.ActionLink("NHÂN VIÊN", "../NhanVien_63133655/Index", new { @class = "a" })</li>
+            <li>@Html.ActionLink("THẺ KHO", "../TheKho_63133655/Index", new { @class = "a" })</li>
+            <li>@Html.ActionLink("NHẬP KHO", "../NhapKho_63133655/Index", new { @class = "a" })</li>
+            <li>@Html.ActionLink("XUẤT KHO", "../XuatKho_63133655/Index", new { @class = "a" })</li>
+        </ul>
+        <div id="content">
+            @RenderBody()
+        </div>
+        <div id="footer">
+            Made by Nguyễn Hoài Huy Đạt &nbsp;|&nbsp; Copyright &copy; @DateTime.Now.Year
+        </div>
+</body>
+</html>

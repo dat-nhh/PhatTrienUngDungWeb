@@ -1,0 +1,43 @@
+﻿@model Project_63133655.Models.NHAPKHO
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>NHẬP KHO</h2>
+
+ <div>
+     <h4>Chi tiết phiếu</h4>
+     @Html.ActionLink("Xem nội dung chi tiết","Index", "NDNhapKho_63133655")
+     <dl class="dl-horizontal">
+         <dt>
+             Số phiếu nhập
+         </dt>
+
+         <dd>
+             @Html.DisplayFor(model => model.SoPhieuNhap)
+         </dd>
+
+         <dt>
+             Ngày nhập
+         </dt>
+
+         <dd>
+             @Html.DisplayFor(model => model.NgayNhap)
+         </dd>
+
+         <dt>
+             Nhân viên phụ trách
+         </dt>
+
+         <dd>
+             @Html.DisplayFor(model => model.MaNV)
+         </dd>
+     </dl>
+ </div>
+ <p>
+     @Html.ActionLink("Sửa", "Edit", new { id = Model.SoPhieuNhap }) |
+     @Html.ActionLink("Xóa", "Delete", new { id = Model.SoPhieuNhap }) |
+     @Html.ActionLink("Quay lại", "Index")
+ </p>

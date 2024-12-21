@@ -1,0 +1,48 @@
+﻿@model Project_63133655.Models.NHAPKHO
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>NHẬP KHO</h2>
+
+<h3>Bạn có chắc chắn muốn xóa phiếu này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Số phiếu nhập
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoPhieuNhap)
+        </dd>
+
+        <dt>
+            Ngày nhập
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayNhap.Date)
+        </dd>
+
+        <dt>
+            Nhân viên phụ trách
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại", "Index")
+        </div>
+    }
+</div>

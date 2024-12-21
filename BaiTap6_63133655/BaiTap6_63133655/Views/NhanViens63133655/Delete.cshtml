@@ -1,0 +1,103 @@
+﻿@model BaiTap6_63133655.Models.NhanVien
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    string gtinh = "";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc chắn muốn xóa bảng này?</h3>
+<div>
+    <h4>Nhân viên</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã nhân viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNV)
+        </dd>
+
+        <dt>
+            Họ nhân viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoNV)
+        </dd>
+
+        <dt>
+            Tên nhân viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNV)
+        </dd>
+
+        <dt>
+            Giới tính
+        </dt>
+
+        <dd>
+            @{if (Model.GioiTinh == true)
+                { gtinh = "Nam"; }
+                else
+                { gtinh = "Nữ"; }
+            }
+            @gtinh
+        </dd>
+
+        <dt>
+            Ngày sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+        <dt>
+            Lương
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Luong)
+        </dd>
+
+        <dt>
+            Ảnh nhân viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnhNV)
+        </dd>
+
+        <dt>
+            Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            Phòng ban
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhongBan.TenPB)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay Lại", "Index")
+        </div>
+    }
+</div>

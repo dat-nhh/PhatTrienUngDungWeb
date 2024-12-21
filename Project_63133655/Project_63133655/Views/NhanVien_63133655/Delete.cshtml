@@ -1,0 +1,55 @@
+﻿@model Project_63133655.Models.NHANVIEN
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    <link href="~/Content/detailStyle.css" rel="stylesheet" />
+    string gtinh = "";
+}
+
+<h2>NHÂN VIÊN</h2>
+
+<h3>Bạn có chắc chắn muốn xóa nội dung này?</h3>
+<div class="container">
+    <div class="column">
+        <img src="~/Images/@Html.DisplayFor(model => model.AnhNV)" class="avatar" alt="Avatar">
+    </div>
+    <div class="column">
+        Mã nhân viên :<br />
+        Họ nhân viên:<br />
+        Tên nhân viên:<br />
+        Ngày sinh:<br />
+        Giới tính:<br />
+        Địa chỉ:<br />
+        Số điện thoại:<br />
+        Chức vụ:<br />
+        Lương:<br />
+    </div>
+    <div class="column">
+        @Html.DisplayFor(model => model.MaNV) <br />
+        @Html.DisplayFor(model => model.HoNV) <br />
+        @Html.DisplayFor(model => model.TenNV)<br />
+        @Html.DisplayFor(model => model.NgaySinh)<br />
+        @{if (Model.GioiTinh == true)
+            { gtinh = "Nam"; }
+            else
+            { gtinh = "Nữ"; }
+        }
+        @gtinh<br />
+        @Html.DisplayFor(model => model.DiaChi)<br />
+        @Html.DisplayFor(model => model.SDT)<br />
+        @Html.DisplayFor(model => model.ChucVu)<br />
+        @Html.DisplayFor(model => model.Luong)<br />
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Xóa" class="btn btn-default" /> |
+        @Html.ActionLink("Quay lại", "Index")
+    </div>
+}
+</div>

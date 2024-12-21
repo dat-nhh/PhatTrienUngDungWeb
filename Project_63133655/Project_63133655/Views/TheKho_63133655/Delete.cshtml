@@ -1,0 +1,64 @@
+﻿@model Project_63133655.Models.THEKHO
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>THẺ KHO</h2>
+
+<h3>Bạn có chắc chắn muốn xóa nội dung này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã cà phê:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaCF)
+        </dd>
+
+        <dt>
+            Loại cà phê:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiCF)
+        </dd>
+
+        <dt>
+            Số lượng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            Đơn vị tính:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DVT)
+        </dd>
+
+        <dt>
+            Đơn giấ:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGia)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại", "Index")
+        </div>
+    }
+</div>

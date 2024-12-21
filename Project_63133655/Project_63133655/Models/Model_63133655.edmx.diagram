@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a1f3386dec054e3c9ca104fc5982efe7" Name="Diagram1">
+        <EntityTypeShape EntityType="Model_63133655.NDNHAPKHO" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_63133655.NDXUATKHO" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_63133655.NHANVIEN" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_63133655.NHAPKHO" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_63133655.QuanTri" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_63133655.sysdiagrams" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_63133655.THEKHO" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_63133655.XUATKHO" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="Model_63133655.FK__NDNHAPKHO__MaCF__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_63133655.FK__NDNHAPKHO__SoPhi__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_63133655.FK__NDXUATKHO__MaCF__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_63133655.FK__NDXUATKHO__SoPhi__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_63133655.FK__NHAPKHO__MaNV__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_63133655.FK__XUATKHO__MaNV__32E0915F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

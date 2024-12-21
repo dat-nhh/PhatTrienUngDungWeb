@@ -1,0 +1,42 @@
+﻿@model ThiGK_63133655.Models.DocGia
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    <link href="~/Content/StyleSheet.css" rel="stylesheet" />
+    string gtinh = "";
+}
+
+<h2>Chi tiết</h2>
+<div class="container">
+    <div class="column">
+        <img src="~/Images/@Html.DisplayFor(model => model.AnhDG)" class="avatar" alt="Avatar">
+    </div>
+    <div class="column">
+        Mã độc giả:<br />
+        Họ độc giả:<br />
+        Tên độc giả:<br />
+        Giới tính:<br />
+        Ngày sinh:<br />
+        Email:<br />
+        Loại độc giả:<br />
+    </div>
+    <div class="column">
+        @Html.DisplayFor(model => model.MaDG) <br />
+        @Html.DisplayFor(model => model.HoDG) <br />
+        @Html.DisplayFor(model => model.TenDG)<br />
+        @{if (Model.GioiTinh == true)
+            { gtinh = "Nam"; }
+            else
+            { gtinh = "Nữ"; }
+        }
+        @gtinh<br />
+        @Html.DisplayFor(model => model.NgaySinh)<br />
+        @Html.DisplayFor(model => model.Email)<br />
+        @Html.DisplayFor(model => model.LoaiDG.TenLoaiDG)<br />
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaDG }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>

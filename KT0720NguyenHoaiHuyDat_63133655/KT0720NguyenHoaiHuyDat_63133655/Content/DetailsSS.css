@@ -1,0 +1,12 @@
+﻿.avatar {
+    width: 100px;
+}
+
+.container {
+    width: 100%;
+}
+
+.column {
+    width: 150px;
+    float: left;
+}

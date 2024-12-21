@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @RenderSection("scripts", required: false)
+    <link href="/Content/styleAdmin.css" rel="stylesheet" />
+</head>
+<body style="padding: 0px 0px 0px 0px;">
+    <div id="banner" style="height: 50px">HỆ THỐNG QUẢN LÝ THÔNG TIN ĐỘC GIẢ</div>
+    <div id="menu">
+        <div>
+            @Html.ActionLink("GIỚI THIỆU", "GioiThieu_63133655", "DocGia_63133655", new { @class = "a" }, null) &nbsp;|&nbsp;
+            @Html.ActionLink("DANH SÁCH", "Index", "DocGia_63133655", new { @class = "a" }, null)&nbsp;|&nbsp;
+            @Html.ActionLink("TÌM KIẾM", "TimKiemDG_63133655", "DocGia_63133655", new { @class = "a" }, null)&nbsp;|&nbsp;
+            @Html.ActionLink("THÊM MỚI", "Create", "DocGia_63133655", new { @class = "a" }, null)
+            <hr style="display: block;border-top: 1px solid aqua;  margin: 8px 0;" />
+        </div>
+    </div>
+    <div id="content">
+        @RenderBody()
+
+    </div>
+    <div id="footer" style="position:fixed; float:left; bottom: 0px">
+        Copyright &copy; @DateTime.Now.Year
+    </div>
+</body>
+</html>

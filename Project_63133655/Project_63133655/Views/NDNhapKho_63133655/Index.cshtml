@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Project_63133655.Models.NDNHAPKHO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "MaCF", rowsPerPage: 10);
+    string[] soID = System.IO.File.ReadAllLines(Server.MapPath("~/saveID.txt"));
+}
+
+<h2>Nội dung phiếu nhập kho</h2>
+<h4>Số phiếu: @soID[0]</h4>
+<p>
+    @Html.ActionLink("Thêm nội dung", "Create")
+</p>
+<html>
+<head>
+    <style type="text/css">
+         .grid-footer {
+            color: #000;
+            font: 17px Calibri;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .alternatingRowStyle {
+            background-color: #FFFAEE;
+        }
+
+        table .table1 {
+            text-align: left;
+            margin-left: 0px;
+            margin-right: 0px;
+            width: 800px;
+        }
+
+        .tr, .td {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="gridContent">
+        @ViewBag.TB
+        @grid.GetHtml(
+            tableStyle: "table table-bordered table-hover",
+            footerStyle: "grid-footer",
+            fillEmptyRows: true,
+            mode: WebGridPagerModes.Numeric,
+            alternatingRowStyle: "alternatingRowStyle",
+              columns: new[]  // colums in grid
+              {
+                    grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+                    grid.Column("MaCF","Mã cà phê"), //the model fields to display
+                    grid.Column("LoaiCF","Loại cà phê"),
+                    grid.Column("SoLuong","Số lượng"),
+                    grid.Column("DVT","Đơn vị tính"), 
+              }
+        )
+    </div>
+</body>
+<div>
+    @Html.ActionLink("Quay lại", "Index", "NhapKho_63133655")
+</div>
+</html>

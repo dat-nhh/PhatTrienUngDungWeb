@@ -1,0 +1,42 @@
+﻿@model KT0720NguyenHoaiHuyDat_63133655.Models.SINHVIEN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    <link href="~/Content/DetailsSS.css" rel="stylesheet" />
+    string gtinh = "";
+}
+
+<h2>Chi tiết</h2>
+<div class="container">
+    <div class="column">
+        <img src="~/Images/@Html.DisplayFor(model => model.AnhSV)" class="avatar" alt="Avatar">
+    </div>
+    <div class="column">
+        Mã sinh viên:<br />
+        Họ sinh viên:<br />
+        Tên sinh viên:<br />
+        Giới tính:<br />
+        Ngày sinh:<br />
+        Địa chỉ:<br />
+        Lớp:<br />
+    </div>
+    <div class="column">
+        @Html.DisplayFor(model => model.MaSV) <br />
+        @Html.DisplayFor(model => model.HoSV) <br />
+        @Html.DisplayFor(model => model.TenSV)<br />
+        @{if (Model.GioiTinh == true)
+            { gtinh = "Nam"; }
+            else
+            { gtinh = "Nữ"; }
+        }
+        @gtinh<br />
+        @Html.DisplayFor(model => model.NgaySinh)<br />
+        @Html.DisplayFor(model => model.DiaChi)<br />
+        @Html.DisplayFor(model => model.LOP.TenLop)<br />
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaSV }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>
